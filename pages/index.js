@@ -1,5 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useState, useRef } from "react";
+import {Stats} from "../lib/Stats";
 
 const Box = (props) => {
   // This reference will give us direct access to the mesh
@@ -36,10 +37,10 @@ export default () => {
           shadows={true}
           camera={cameraSetting}
         >
+          <Stats/>
           <directionalLight position={[1, 2, 3]} intensity={1.5} />
           <ambientLight intensity={0.5}/>
-          <Box position={[-1.2, 0, 0]} />
-          <Box position={[1.2, 0, 0]} />
+          <Box position={[0, 0, 0]} />
         </Canvas>
       </div>
     </>
