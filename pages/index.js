@@ -2,6 +2,8 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { useState, useRef } from "react";
 import {Stats} from "../lib/Stats";
 
+import OrbitControls from "../lib/OrbitControls"
+
 const Box = (props) => {
   // This reference will give us direct access to the mesh
   const mesh = useRef()
@@ -38,6 +40,8 @@ export default () => {
           camera={cameraSetting}
         >
           <Stats/>
+          <OrbitControls/>
+
           <directionalLight position={[1, 2, 3]} intensity={1.5} />
           <ambientLight intensity={0.5}/>
           <Box position={[0, 0, 0]} />
